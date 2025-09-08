@@ -9,10 +9,14 @@ int main() {
     int tabuleiro[10][10] = {0}; // construção da matriz com todos os slots com 0
     int navio1_linha = 6, navio1_coluna = 7; // navio na horizontal
     int navio2_linha = 4, navio2_coluna = 5; // navio na vertical
+    int navio3_linha = 1, navio3_coluna = 6; // navio na diagonal vetor baixo/direita
+    int navio4_linha = 8, navio4_coluna = 2; // navio na diagonal vetor cima/ direita
 
     for( int i = 0; i < 3; i++) { // preenchimento dos slots vazios em 3 unidades no eixo x/y
         tabuleiro[navio1_linha + i][navio1_coluna] = 3; // navio na horizontal
         tabuleiro[navio2_linha][navio2_coluna + i] = 3; // navio na vertical
+        tabuleiro[navio3_linha + i][navio3_coluna + i] = 3; // navio diagonal para baixo/direita
+        tabuleiro[navio4_linha - i][navio4_coluna + i] = 3; // navio  diagonal para cima/direita
     }
 
     // saida do tabuleiro
